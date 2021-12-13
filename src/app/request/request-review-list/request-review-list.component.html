@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div>
+    <h4>Request Review List</h4>
+    <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
+    <table class="table table-lg">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Justification</th>
+            <th>Rejection Reason</th>
+            <th>Delivery Mode</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User Id</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let request of requests | requestSearch: searchCriteria">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
+            <td>{{request.rejectionReason}}</td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.userId}}</td>
+            <td>
+                <a routerLink="/requests/request-review-item/{{request.id}}">Review Item</a> 
+
+            </td>
+        </tr>
+    </table>
+</div>

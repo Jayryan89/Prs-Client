@@ -1,0 +1,38 @@
+<app-menu></app-menu>
+<h3>Review Request</h3>
+<span><a routerLink="/requests/list"></a></span>
+<table *ngIf="request" class="table table-lg">
+    <tr>
+        <th>Id</th>
+        <td><input [(ngModel)]="request.id" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><input [(ngModel)]="request.description" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Justification</th>
+        <td><input [(ngModel)]="request.justification" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Delivery Mode</th>
+        <td><input [(ngModel)]="request.deliveryMode" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td><input [(ngModel)]="request.status" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td><input [(ngModel)]="request.total" type="number" disabled></td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
+    </tr>
+    <button (click)="approve()" class="btn btn-info">Approve</button> |
+    <button (click)="reject()" class="btn btn-danger">Reject</button>|
+    <span *ngIf="showReject">
+        <input [(ngModel)]= "request.rejectionReason" type="text" placeholder="Enter Rejection Reason">
+    </span>
+</table>

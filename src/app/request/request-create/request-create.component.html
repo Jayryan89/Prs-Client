@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<div>
+    <div>
+        <span>
+            <h3>Request Create</h3>
+        </span>
+    </div>
+    <table class="table table-lg">
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="request.description" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Justification</th>
+            <td>
+                <input [(ngModel)]="request.justification" type="text">
+            </td>
+        </tr>
+
+        <tr>
+            <th>Delivery Mode</th>
+            <td>
+                <input [(ngModel)]="request.deliveryMode" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <th>User Id</th>
+            <td>
+                <input [(ngModel)]="request.userId" type="text" disabled>
+            </td>
+        </tr>
+    </table>
+    <tr>
+        <button (click)="save()" class="btn btn-info">Save</button>
+    </tr>
+</div>
