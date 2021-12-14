@@ -1,0 +1,49 @@
+<app-menu></app-menu>
+<h3>Request Lines</h3>
+<table *ngIf="request" class="table table-lg">
+    <thead>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total | currency}}</td>
+        <td>{{request.user.username}}</td>
+        <td>
+            <button (click)="review()" class="btn btn-link">Review</button>
+        </td>
+    </tbody>
+</table>
+<hr>
+<h6>Requestlines</h6>
+<a *ngIf="request" routerLink="/request-lines/create/{{request.id}}">Add</a>
+<table *ngIf="request" class="table table-lg">
+    <thead>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price
+        <th>Line Total</th>
+        <th>Actions</th>
+    </thead>
+    <tbody *ngFor="let request of request.requestlines">
+        <td>{{request.id}}</td>
+        <td>{{request.product?.name}}</td>
+        <td>{{request.quantity}}</td>
+        <td>{{request.product?.price | currency}}</td>
+        <td>{{request.product.price * request.quantity | currency}}</td>
+        <td>
+            <a routerLink="/request-lines/edit/{{request.id}}">Edit</a> |
+            <button (click)="verify()">Delete</button>
+            <span *ngIf="showDelete">
+                <button (click)="delete(request.id)"> | Confirm Delete</button>
+            </span>
+        </td>
+    </tbody>
+</table>

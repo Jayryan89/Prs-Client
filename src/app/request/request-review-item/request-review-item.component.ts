@@ -35,22 +35,16 @@ export class RequestReviewItemComponent implements OnInit {
     );
   }
 
-  verify(): void {
-    this.showReject= false;
-    this.requestsvc.reject(this.request).subscribe(
-      res=>{
+  reject(): void {
+    this.requestsvc.reject(this.request).subscribe({
+      next: res=>{
         this.router.navigateByUrl("/requests/list");
       },
-      err=>{
+      error: err=>{
         console.error(err);
       }
-    );
+    });
   }
-
-  reject():void {
-    this.showReject=!this.showReject;
-  }
-
 
   ngOnInit(): void {
     this.requestId = +this.route.snapshot.params['id'];

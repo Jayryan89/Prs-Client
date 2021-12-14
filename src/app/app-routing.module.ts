@@ -31,37 +31,37 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/user/login", pathMatch: "full"},
+  { path: "", redirectTo: "/users/login", pathMatch: "full" },
 
-  {path: "home", component: HomeComponent},
-  {path: "menu", component: MenuComponent},
+  { path: "home", component: HomeComponent },
+  { path: "menu", component: MenuComponent },
 
-  {path: "user/list", component: UserListComponent},
-  {path: "user/detail/:id", component: UserDetailComponent},
-  {path: "user/edit/:id", component: UserEditComponent},
-  {path: "user/create", component: UserCreateComponent},
-  {path: "user/login", component: UserLoginComponent},
+  { path: "users/list", component: UserListComponent },
+  { path: "users/detail/:id", component: UserDetailComponent },
+  { path: "users/edit/:id", component: UserEditComponent },
+  { path: "users/create", component: UserCreateComponent },
+  { path: "users/login", component: UserLoginComponent },
 
-  {path: "vendor/list", component: VendorListComponent},
-  {path: "vendor/detail/:id", component: VendorDetailComponent},
-  {path: "vendor/edit/:id", component: VendorEditComponent},
-  {path: "vendor/create", component: VendorCreateComponent},
+  { path: "vendors/list", component: VendorListComponent },
+  { path: "vendors/detail/:id", component: VendorDetailComponent },
+  { path: "vendors/edit/:id", component: VendorEditComponent },
+  { path: "vendors/create", component: VendorCreateComponent },
 
-  {path: "product/list", component: ProductListComponent},
-  {path: "product/detail/:id", component: ProductDetailComponent},
-  {path: "product/edit/:id", component: ProductEditComponent},
-  {path: "product/create", component: ProductCreateComponent},
+  { path: "products/list", component: ProductListComponent },
+  { path: "products/detail/:id", component: ProductDetailComponent },
+  { path: "products/edit/:id", component: ProductEditComponent },
+  { path: "products/create", component: ProductCreateComponent },
 
-  {path: "request/list", component: RequestListComponent},
-  {path: "request/detail/:id", component: RequestDetailComponent},
-  {path: "request/edit/:id", component: RequestEditComponent},
-  {path: "request/create", component: RequestCreateComponent},
-  {path: "request/line/:id", component: RequestLineComponent},
-  {path: "requests/request-review-list", component: RequestReviewListComponent},
-  {path: "requests/request-review-item/:id", component: RequestReviewItemComponent},
+  { path: "requests/list", component: RequestListComponent },
+  { path: "requests/detail/:id", component: RequestDetailComponent },
+  { path: "requests/edit/:id", component: RequestEditComponent },
+  { path: "requests/create", component: RequestCreateComponent },
+  { path: "requests/lines/:id", component: RequestLineComponent },
+  { path: "requests/request-review-list", component: RequestReviewListComponent },
+  { path: "requests/request-review-item/:id", component: RequestReviewItemComponent },
 
-  {path: "request-lines/create/:id",component: RequestlineCreateComponent},
-  {path: "request-lines/edit/:id", component: RequestlineEditComponent},
+  { path: "request-lines/create/:id",component: RequestlineCreateComponent },
+  { path: "request-lines/edit/:id", component: RequestlineEditComponent },
 
   { path: "**", component: HomeComponent},
 ];

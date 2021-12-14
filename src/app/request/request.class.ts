@@ -13,7 +13,9 @@ export class Request {
     userId: number=0;
     user!: User;
     username: string='';
-    requestline!: Requestline[];
+    requestlines!: Requestline[];
+
+    statusStyles: string="";
  
     constructor() {}
 

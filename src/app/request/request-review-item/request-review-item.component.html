@@ -15,6 +15,10 @@
         <td><input [(ngModel)]="request.justification" type="text" disabled></td>
     </tr>
     <tr>
+        <th>Rejection Reason</th>
+        <td><input [(ngModel)]="request.rejectionReason" type="text" ></td>
+    </tr>
+    <tr>
         <th>Delivery Mode</th>
         <td><input [(ngModel)]="request.deliveryMode" type="text" disabled></td>
     </tr>
@@ -31,8 +35,6 @@
         <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
     </tr>
     <button (click)="approve()" class="btn btn-info">Approve</button> |
-    <button (click)="reject()" class="btn btn-danger">Reject</button>|
-    <span *ngIf="showReject">
+    <button (click)="reject()" class="btn btn-danger">Reject</button> |
         <input [(ngModel)]= "request.rejectionReason" type="text" placeholder="Enter Rejection Reason">
-    </span>
 </table>

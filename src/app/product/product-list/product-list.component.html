@@ -8,21 +8,18 @@
         <tr>
             <th>Id</th>
             <th>PartNbr</th>
-            <th>Description</th>
+            <th>Name</th>
             <th>Price</th>
             <th>Unit</th>
             <th>PhotoPath</th>
-            <th>VendorId</th>
         </tr>
         <tr *ngFor="let product of products">
             <td>{{product.id}}</td>
             <td>{{product.partNbr}}</td>
-            <td>{{product.description}}</td>
+            <td>{{product.name }}</td>
             <td>{{product.price}}</td>
             <td>{{product.unit}}</td>
-            <td>{{product.photoPath}}</td>
-            <td>{{product.vendorId}}</td>
-            <td>{{product.vendor.name}}</td>
+            <td>{{product.vendor?.name}}</td>
             <td>
                 <a routerLink="/products/detail/{{product.id}}">Detail</a> |
                 <a routerLink="/products/edit/{{product.id}}">Edit</a>

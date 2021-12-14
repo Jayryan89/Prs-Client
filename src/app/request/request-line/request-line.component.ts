@@ -28,6 +28,14 @@ export class RequestLineComponent implements OnInit {
     private requestlineSvc: RequestlineService
   ) { }
 
+  review(): void {
+    this.requestsvc.review(this.request).subscribe({
+      next: res => {
+        this.refresh(this.request.id);
+      }
+    });
+  }
+
   verify(): void { this.showDelete = !this.showDelete }
   
   delete(id:number): void {
